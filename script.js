@@ -29,6 +29,8 @@ function lastStock(stock){
     return stock.quantity <= 15
 }
 
+
+
 window.onload = () => {
   const productsList = document.getElementById("tableBody");
   for (let i = 0; i < products.length; i++) {
@@ -45,8 +47,9 @@ window.onload = () => {
     </tr>`;
   reduceTable.style.textAlign ="center";
 
-  const filterTable = document.getElementById("filterTable")
-  let productsFiltered = products.filter(lastStock)
+  const filterTable = document.getElementById("filterTable");
+  let productsFiltered = products.slice(0);
+  productsFiltered = products.filter(lastStock);
 
   productsFiltered.forEach(product =>{
     filterTable.innerHTML += `<tr> 
@@ -56,5 +59,17 @@ window.onload = () => {
     </tr>`;
   })
 
+  const sortProducts = document.getElementById("sortTable");
+  let productsSorted = products.slice(0);
+  productsSorted.sort((a,b) =>{
+    return b.price-a.price
+  })
 
+  productsSorted.forEach(product=>{
+    sortProducts.innerHTML += `<tr> 
+        <td>${product.name}</td>
+        <td>${product.quantity}</td>
+        <td>${product.price}</td>
+    </tr>`;
+  })
 };
