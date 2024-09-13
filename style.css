@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(46, 39, 39);
+    color: white;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-size: 30px;
+    color: lightblue;
+    font-weight: bold;
+    text-align: center;
+}
+
+table{
+    margin: 0 auto;
+    width: 70%;
+    border: solid 1px white;
+}
+
+thead{
+    color: black;
+    background-color: blanchedalmond;
+    
+}
+
+tr:nth-child(){
+    background-color: cornsilk;
+    color: black;
+}
+
+#tableBody{
+    text-align: center;
+}
